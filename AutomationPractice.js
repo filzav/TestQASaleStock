@@ -16,6 +16,15 @@ const cssproc = xPathToCss(xpathproc)
 const xpathcheckout = '//*[@id="center_column"]/p[2]/a[1]/span'
 const csscheckout = xPathToCss(xpathcheckout)
 
+const xpathregister = '//*[@id="SubmitCreate"]/span'
+const cssregister = xPathToCss(xpathregister)
+
+const xpathregisteraccount = '//*[@id="submitAccount"]/span'
+const cssregisteraccount = xPathToCss(xpathregisteraccount)
+
+const xpathgender = '//*[@id="id_gender1"]'
+const cssgender = xPathToCss(xpathgender)
+
 const xpathlogin = '//button[@id=\'SubmitLogin\']//span'
 const csslogin = xPathToCss(xpathlogin)
 
@@ -33,6 +42,49 @@ const cssbankwire = xPathToCss(xpathbankwire)
 
 const xpathconfirm = '//*[@id="cart_navigation"]/button/span'
 const cssconfirm = xPathToCss(xpathconfirm)
+
+var selectdate = Selector('select').filter('[name="days"]')
+var selectmonth = Selector('#months')
+var monthoption = selectmonth.find('option')
+var selectyear = Selector('select').filter('[name="years"]')
+var selectstate = Selector('#id_state')
+var stateoption = selectstate.find('option')
+
+test('buy then register', async t => {
+    await t
+        .typeText('#search_query_top','blouse')
+        .click('button[type=submit]')
+        .click(cssblouse)
+        .click(csssubmit)
+        .click(cssproc)
+        .click(csscheckout)
+        .typeText('#email_create','test1234567890@test.com')
+        .click(cssregister)
+        .click(cssgender)
+        .typeText('#customer_firstname','Percobaan')
+        .typeText('#customer_lastname','Belakang')
+        .typeText('#passwd','percobaanbelakang')
+        .click('#days')
+        .click(Selector('option').filter('[value="15"]'))
+        .expect(selectdate.selectedIndex).eql(15)
+        .click(selectmonth)
+        .click(monthoption.withText('May'))
+        .click('#years')
+        .click(Selector('option').filter('[value="1985"]'))
+        .expect(selectyear.selectedIndex).eql(34)
+        .typeText('#address1','jalan')
+        .typeText('#city','kota')
+        .click(selectstate)
+        .click(stateoption.withText('Florida'))
+        .typeText('#postcode','12345')
+        .typeText('#phone_mobile','080989999')
+        .click(cssregisteraccount)
+        .click(cssproceed)
+        .click(cssagree)
+        .click(csscontinue)
+        .click(cssbankwire)
+        .click(cssconfirm)
+})
 
 test('buy then login', async t =>{
     await t
