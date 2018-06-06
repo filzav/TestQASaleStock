@@ -1,0 +1,13 @@
+BUG:
+- Ketika memilih Casual Dress terkadang product tidak muncul
+- Ketika langsung memilih add to cart barang (tombol hover), size otomatis S
+
+Test Design:
+Yang saya gunakan dalam mengerjakan tes ini adalah blackbox testing dimana saya melakukan testing tanpa mengetahui bagaimana kodingan dari website (http://automationpractice.com/index.php)
+
+Lesson Learned:
+Yang saya pelajari dalam mengerjakan tes ini adalah saya dituntut untuk membuat otomasi dengan menggunakan selenium (dimana sebelumnya saya belum pernah membuat otomasi) sehingga dari awalnya belum pernah menyentuh selenium jadi mengeksplor hal-hal yang dibutuhkan untuk melakukan otomasi dengan menggunakan selenium.
+Selain itu, saya juga mencoba membuat selenium dengan 2 cara, pure selenium (webdriver) dan menggunakan framework dimana untuk case ini, webdriver sangat sulit untuk melakukan tes sedangkan dengan menggunakan framework sedikit dipermudah
+
+To Do:
+Belajar membuat kodingan secara modular agar tidak terfokus pada 1 code

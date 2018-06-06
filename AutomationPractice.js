@@ -1,105 +1,105 @@
 import { Selector } from 'testcafe'; // first import testcafe selectors
 import xPathToCss from 'xpath-to-css'
 
-fixture `Buy Then Login :`// declare the fixture
+fixture `Automation Practice :`// declare the fixture
     .page `http://automationpractice.com/index.php`;
 
-const xpathblouse = '//*[@id="center_column"]/ul/li/div/div[2]/h5/a'
-const cssblouse = xPathToCss(xpathblouse)
+const xpathBlouse = '//*[@id="center_column"]/ul/li/div/div[2]/h5/a'
+const cssBlouse = xPathToCss(xpathBlouse)
 
-const xpathsubmit = '//*[@id="add_to_cart"]/button'
-const csssubmit = xPathToCss(xpathsubmit)
+const xpathSubmit = '//*[@id="add_to_cart"]/button'
+const cssSubmit = xPathToCss(xpathSubmit)
 
-const xpathproc = '//*[@id="layer_cart"]/div[1]/div[2]/div[4]/a/span'
-const cssproc = xPathToCss(xpathproc)
+const xpathProc = '//*[@id="layer_cart"]/div[1]/div[2]/div[4]/a/span'
+const cssProc = xPathToCss(xpathProc)
 
-const xpathcheckout = '//*[@id="center_column"]/p[2]/a[1]/span'
-const csscheckout = xPathToCss(xpathcheckout)
+const xpathCheckout = '//*[@id="center_column"]/p[2]/a[1]/span'
+const cssCheckout = xPathToCss(xpathCheckout)
 
-const xpathregister = '//*[@id="SubmitCreate"]/span'
-const cssregister = xPathToCss(xpathregister)
+const xpathRegister = '//*[@id="SubmitCreate"]/span'
+const cssRegister = xPathToCss(xpathRegister)
 
-const xpathregisteraccount = '//*[@id="submitAccount"]/span'
-const cssregisteraccount = xPathToCss(xpathregisteraccount)
+const xpathRegisterAccount = '//*[@id="submitAccount"]/span'
+const cssRegisterAccount = xPathToCss(xpathRegisterAccount)
 
-const xpathgender = '//*[@id="id_gender1"]'
-const cssgender = xPathToCss(xpathgender)
+const xpathGender = '//*[@id="id_gender1"]'
+const cssGender = xPathToCss(xpathGender)
 
-const xpathlogin = '//button[@id=\'SubmitLogin\']//span'
-const csslogin = xPathToCss(xpathlogin)
+const xpathLogin = '//button[@id=\'SubmitLogin\']//span'
+const cssLogin = xPathToCss(xpathLogin)
 
-const xpathproceed = '//*[@id="center_column"]/form/p/button/span'
-const cssproceed = xPathToCss(xpathproceed)
+const xpathProceed = '//*[@id="center_column"]/form/p/button/span'
+const cssProceed = xPathToCss(xpathProceed)
 
-const xpathagree = '//input[@id=\'cgv\']'
-const cssagree = xPathToCss(xpathagree)
+const xpathAgree = '//input[@id=\'cgv\']'
+const cssAgree = xPathToCss(xpathAgree)
 
-const xpathcontinue = '//*[@id="form"]/p/button/span'
-const csscontinue = xPathToCss(xpathcontinue)
+const xpathContinue = '//*[@id="form"]/p/button/span'
+const cssContinue = xPathToCss(xpathContinue)
 
-const xpathbankwire = '//a[@class=\'bankwire\']'
-const cssbankwire = xPathToCss(xpathbankwire)
+const xpathBankWire = '//a[@class=\'bankwire\']'
+const cssBankWire = xPathToCss(xpathBankWire)
 
-const xpathconfirm = '//*[@id="cart_navigation"]/button/span'
-const cssconfirm = xPathToCss(xpathconfirm)
+const xpathConfirm = '//*[@id="cart_navigation"]/button/span'
+const cssConfirm = xPathToCss(xpathConfirm)
 
-var selectdate = Selector('select').filter('[name="days"]')
-var selectmonth = Selector('#months')
-var monthoption = selectmonth.find('option')
-var selectyear = Selector('select').filter('[name="years"]')
-var selectstate = Selector('#id_state')
-var stateoption = selectstate.find('option')
+var selectDate = Selector('select').filter('[name="days"]')
+var selectMonth = Selector('#months')
+var monthOption = selectMonth.find('option')
+var selectYear = Selector('select').filter('[name="years"]')
+var selectState = Selector('#id_state')
+var stateOption = selectstate.find('option')
 
-test('buy then register', async t => {
+test('Search, Buy, then Register', async t => {
     await t
         .typeText('#search_query_top','blouse')
         .click('button[type=submit]')
-        .click(cssblouse)
-        .click(csssubmit)
-        .click(cssproc)
-        .click(csscheckout)
+        .click(cssBlouse)
+        .click(cssSubmit)
+        .click(cssProc)
+        .click(cssCheckout)
         .typeText('#email_create','test1234567890@test.com')
-        .click(cssregister)
-        .click(cssgender)
+        .click(cssRegister)
+        .click(cssGender)
         .typeText('#customer_firstname','Percobaan')
         .typeText('#customer_lastname','Belakang')
         .typeText('#passwd','percobaanbelakang')
         .click('#days')
         .click(Selector('option').filter('[value="15"]'))
-        .expect(selectdate.selectedIndex).eql(15)
-        .click(selectmonth)
-        .click(monthoption.withText('May'))
+        .expect(selectDate.selectedIndex).eql(15)
+        .click(selectMonth)
+        .click(monthOption.withText('May'))
         .click('#years')
         .click(Selector('option').filter('[value="1985"]'))
-        .expect(selectyear.selectedIndex).eql(34)
+        .expect(selectYear.selectedIndex).eql(34)
         .typeText('#address1','jalan')
         .typeText('#city','kota')
-        .click(selectstate)
-        .click(stateoption.withText('Florida'))
+        .click(selectState)
+        .click(stateOption.withText('Florida'))
         .typeText('#postcode','12345')
         .typeText('#phone_mobile','080989999')
-        .click(cssregisteraccount)
-        .click(cssproceed)
-        .click(cssagree)
-        .click(csscontinue)
-        .click(cssbankwire)
-        .click(cssconfirm)
+        .click(cssRegisterAccount)
+        .click(cssProceed)
+        .click(cssAgree)
+        .click(cssContinue)
+        .click(cssBankWire)
+        .click(cssConfirm)
 })
 
-test('buy then login', async t =>{
+test('Search, Buy, then Login', async t =>{
     await t
         .typeText('#search_query_top','blouse')
         .click('button[type=submit]')
-        .click(cssblouse)
-        .click(csssubmit)
-        .click(cssproc)
-        .click(csscheckout)
+        .click(cssBlouse)
+        .click(cssSubmit)
+        .click(cssProc)
+        .click(cssCheckout)
         .typeText('#email','test1234567@test.com')
         .typeText('#passwd','siapasaya')
-        .click(csslogin)
-        .click(cssproceed)
-        .click(cssagree)
-        .click(csscontinue)
-        .click(cssbankwire)
-        .click(cssconfirm)
+        .click(cssLogin)
+        .click(cssProceed)
+        .click(cssAgree)
+        .click(cssContinue)
+        .click(cssBankWire)
+        .click(cssConfirm)
 })
