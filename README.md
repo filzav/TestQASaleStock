@@ -6,7 +6,7 @@ Sebelum menjalankan kode ini, silahkan masuk ke virtual environment anda lewat c
 
 Setelah itu, jalankan script AutomationPractice.py dari command prompt yang telah berada di dalam virtual env yang telah diinstall dengan requirements.txt.
 
-=========================================================================================================================================
+=======================================================================================================================
 
 Selain itu ada versi lain dengan menggunakan testcafe
 
