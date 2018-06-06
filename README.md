@@ -1,15 +1,56 @@
-**QA Test SaleStock**
+# QA Test SaleStock
+Kode ini dibuat untuk menyelesaikan automation dari automationpractice.com
 
-Kode ini dibuat dengan Python ver. 2.7.13., Selenium 3.11, dan menggunakan chrome web driver. Pastikan anda telah mendownload chrome webdriver dan memasukkan lokasi webdriver tersebut ke dalam Environtment Path.
+## Getting Started
+Terdapat 2 kode yaitu AutomationPractice.py dan AutomationPractice.js
 
-Sebelum menjalankan kode ini, silahkan masuk ke virtual environment anda lewat command prompt lalu install requirement yang ada didalam requirements.txt ke dalam virtual environment anda dengan command "pip install -r requirements.txt"
+### Prerequisites
+Pada bagian ini akan dijelaskan apa saja yang perlu diinstall untuk menjalankan kode ini
 
-Setelah itu, jalankan script AutomationPractice.py dari command prompt yang telah berada di dalam virtual env yang telah diinstall dengan requirements.txt.
+```
+Python ver 2.7.13.
+Selenium 3.11
+Chrome Webdriver
+NodeJS
+Testcafe
+```
 
-=================================================================================
+### Installing
+Untuk versi python, yang perlu diinstall adalah
 
-Selain itu terdapat versi lain dengan menggunakan testcafe (JavaScript)
+```
+ketik pip install -r requirements.txt pada virtual environment anda
+kemudian pastikan Chrome Webdriver yang telah didownload berada pada direktori yang sama dengan envirenment path
+```
 
-Untuk menjalankannya pastikan sudah menginstall testcafe dengan cara npm install -g testcafe, kemudian sudah menginstall xpathtocss yaitu dengan cara npm install --save xpath-to-css
+Untuk versi JavaScript, yang perlu diinstall adalah:
 
-Setelah itu, jalankan script AutomationPractice.js dari command prompt dengan cara testcafe (pilihan browser) (nama file)
+```
+ketik npm install -g testcafe dan npm install --save xpath-to-css pada virtual environment anda
+```
+
+## Running the tests
+Untuk versi python, cara menjalankannya adalah 
+
+```
+python (nama file).py
+
+untuk kode ini: python AutomationPractice.py
+```
+
+Untuk versi JavaScript, cara menjalankannya adalah
+
+```
+testcafe (pilihan browser) (nama file).js
+
+untuk kode ini: testcafe chrome AutomationPractice.js
+```
+
+## Built with
+* [Selenium](https://www.seleniumhq.org/)
+* [Python](https://www.python.org/)
+* [Testcafe](https://testcafe.devexpress.com/) - Automation test framework used
+
+## Authors
+
+* **Filza Valorisantyo** - [filzav](https://github.com/filzav)
